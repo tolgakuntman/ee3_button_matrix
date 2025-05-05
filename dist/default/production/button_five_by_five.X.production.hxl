@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- /tmp/xcW6BYarp/driver_tmp_3.o
+ /tmp/xc2Wje1XK/driver_tmp_3.o
  -Odist/default/production/button_five_by_five.X.production.hex
  -logfile=dist/default/production/button_five_by_five.X.production.hxl
  -addressing=1
@@ -9,23 +9,23 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(/tmp/xcW6BYarp/driver_tmp_3.o)
-  8h - Bh		(/tmp/xcW6BYarp/driver_tmp_3.o)
-  18h - 1Dh		(/tmp/xcW6BYarp/driver_tmp_3.o)
-  FE3Ch - 111C7h		(/tmp/xcW6BYarp/driver_tmp_3.o)
-  300000h - 300007h		(/tmp/xcW6BYarp/driver_tmp_3.o)
-  300009h - 300009h		(/tmp/xcW6BYarp/driver_tmp_3.o)
+  0h - 3h		(/tmp/xc2Wje1XK/driver_tmp_3.o)
+  8h - Bh		(/tmp/xc2Wje1XK/driver_tmp_3.o)
+  18h - 1Dh		(/tmp/xc2Wje1XK/driver_tmp_3.o)
+  FE3Ch - 1116Dh		(/tmp/xc2Wje1XK/driver_tmp_3.o)
+  300000h - 300007h		(/tmp/xc2Wje1XK/driver_tmp_3.o)
+  300009h - 300009h		(/tmp/xc2Wje1XK/driver_tmp_3.o)
  Unused ranges:
   4h - 7h
   Ch - 17h
   1Eh - FE3Bh
-  111C8h - 2FFFFFh
+  1116Eh - 2FFFFFh
   300008h - 300008h
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (/tmp/xcW6BYarp/driver_tmp_3.o)
+  H1 = Input file             (/tmp/xc2Wje1XK/driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -339,13 +339,7 @@
 00011130 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00011140 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00011150 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00011160 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00011170 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00011180 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00011190 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000111A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000111B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000111C0 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+00011160 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 ----------------------------------------------------------
 00300000 | H1 H1 H1 H1 H1 H1 H1 H1 -- H1 -- -- -- -- -- --
 00300010 | --

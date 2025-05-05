@@ -82,17 +82,8 @@ FSM_ROW_SET 1
 FSM_SCAN_COLS 2
 FSM_DEBOUNCE 3
 ]
-"1 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/abs.c
-[v _abs abs `(i  1 e 2 0 ]
-"7 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "7 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
-[v i2___awmod __awmod `(i  1 e 2 0 ]
-"1177 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/doprnt.c
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-"1817
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/float.c
@@ -107,16 +98,8 @@ FSM_DEBOUNCE 3
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
 "3 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/memset.c
 [v _memset memset `(*.39v  1 e 3 0 ]
-"8 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-"8 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-"13 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/nf_snprintf.c
-[v _snprintf snprintf `(i  1 e 2 0 ]
 "5 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/printf.c
 [v _printf printf `(i  1 e 2 0 ]
-"7 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/putch.c
-[v _putch putch `(v  1 e 1 0 ]
 "10 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -125,8 +108,8 @@ FSM_DEBOUNCE 3
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"5 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
+"3 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/strncpy.c
+[v _strncpy strncpy `(*.39uc  1 e 3 0 ]
 "15 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/Umul64.c
@@ -149,11 +132,11 @@ FSM_DEBOUNCE 3
 [v _AdvancedSettings AdvancedSettings `(v  1 e 1 0 ]
 "38
 [v _slave slave `(v  1 e 1 0 ]
-"97
+"108
 [v _nrf_irq nrf_irq `(v  1 e 1 0 ]
-"101
+"112
 [v _tmr0_irq tmr0_irq `(v  1 e 1 0 ]
-"106
+"117
 [v _main main `(v  1 e 1 0 ]
 "69 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/mcc_generated_files/spi/src/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
@@ -221,8 +204,8 @@ FSM_DEBOUNCE 3
 [v _DELAY_microseconds DELAY_microseconds `(v  1 e 1 0 ]
 "46 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/mcc_generated_files/timer/src/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"79
-[v _TMR0_Start TMR0_Start `(v  1 e 1 0 ]
+"84
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
 "139
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 "151
@@ -315,17 +298,6 @@ FSM_DEBOUNCE 3
 [v _Nrf24_getPALevel Nrf24_getPALevel `(uc  1 e 1 0 ]
 "495
 [v _Nrf24_getRetransmitDelay Nrf24_getRetransmitDelay `(uc  1 e 1 0 ]
-"153 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/doprnt.c
-[v _prec prec `i  1 s 2 prec ]
-[v _width width `i  1 s 2 width ]
-"154
-[v _flags flags `uc  1 s 1 flags ]
-"185
-[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
-"189
-[v _nout nout `i  1 s 2 nout ]
-"3 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/errno.c
-[v _errno errno `i  1 e 2 0 ]
 "3338 /Users/tolgakuntman/.mchp_packs/Microchip/PIC18F-Q_DFP/1.25.433/xc8/pic/include/proc/pic18f57q43.h
 [v _SPI1RXB SPI1RXB `VEuc  1 e 1 @128 ]
 "3408
@@ -832,7 +804,7 @@ FSM_DEBOUNCE 3
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "48923
 [v _LATB LATB `VEuc  1 e 1 @1215 ]
-[s S2168 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S2169 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -842,13 +814,13 @@ FSM_DEBOUNCE 3
 `uc 1 LATB7 1 0 :1:7 
 ]
 "48940
-[u S2177 . 1 `S2168 1 . 1 0 ]
+[u S2178 . 1 `S2169 1 . 1 0 ]
 "48940
 "48940
-[v _LATBbits LATBbits `VES2177  1 e 1 @1215 ]
+[v _LATBbits LATBbits `VES2178  1 e 1 @1215 ]
 "48985
 [v _LATC LATC `VEuc  1 e 1 @1216 ]
-[s S1793 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1794 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -858,17 +830,17 @@ FSM_DEBOUNCE 3
 `uc 1 LATC7 1 0 :1:7 
 ]
 "49002
-[u S1802 . 1 `S1793 1 . 1 0 ]
+[u S1803 . 1 `S1794 1 . 1 0 ]
 "49002
 "49002
-[v _LATCbits LATCbits `VES1802  1 e 1 @1216 ]
+[v _LATCbits LATCbits `VES1803  1 e 1 @1216 ]
 "49047
 [v _LATD LATD `VEuc  1 e 1 @1217 ]
 "49109
 [v _LATE LATE `VEuc  1 e 1 @1218 ]
 "49141
 [v _LATF LATF `VEuc  1 e 1 @1219 ]
-[s S2147 . 1 `uc 1 LATF0 1 0 :1:0 
+[s S2148 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -878,10 +850,10 @@ FSM_DEBOUNCE 3
 `uc 1 LATF7 1 0 :1:7 
 ]
 "49158
-[u S2156 . 1 `S2147 1 . 1 0 ]
+[u S2157 . 1 `S2148 1 . 1 0 ]
 "49158
 "49158
-[v _LATFbits LATFbits `VES2156  1 e 1 @1219 ]
+[v _LATFbits LATFbits `VES2157  1 e 1 @1219 ]
 "49203
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
 "49265
@@ -908,7 +880,7 @@ FSM_DEBOUNCE 3
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
 "49483
 [v _TRISF TRISF `VEuc  1 e 1 @1227 ]
-[s S2189 . 1 `uc 1 RC0 1 0 :1:0 
+[s S2190 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -918,11 +890,11 @@ FSM_DEBOUNCE 3
 `uc 1 RC7 1 0 :1:7 
 ]
 "49686
-[u S2198 . 1 `S2189 1 . 1 0 ]
+[u S2199 . 1 `S2190 1 . 1 0 ]
 "49686
 "49686
-[v _PORTCbits PORTCbits `VES2198  1 e 1 @1232 ]
-[s S2210 . 1 `uc 1 RD0 1 0 :1:0 
+[v _PORTCbits PORTCbits `VES2199  1 e 1 @1232 ]
+[s S2211 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -932,10 +904,10 @@ FSM_DEBOUNCE 3
 `uc 1 RD7 1 0 :1:7 
 ]
 "49748
-[u S2219 . 1 `S2210 1 . 1 0 ]
+[u S2220 . 1 `S2211 1 . 1 0 ]
 "49748
 "49748
-[v _PORTDbits PORTDbits `VES2219  1 e 1 @1233 ]
+[v _PORTDbits PORTDbits `VES2220  1 e 1 @1233 ]
 [s S441 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -1002,19 +974,19 @@ FSM_DEBOUNCE 3
 [v _rf24_crclength rf24_crclength `C[3][10]uc  1 e 30 0 ]
 "69
 [v _rf24_pa_dbm rf24_pa_dbm `[4][8]uc  1 e 32 0 ]
-"106 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/main.c
+"117 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"131
+"142
 } 0
 "38
 [v _slave slave `(v  1 e 1 0 ]
 {
-"84
+"95
 [v slave@buf buf `[32]uc  1 a 32 32 ]
-"61
+"62
 [v slave@sending_buf sending_buf `[32]uc  1 a 32 64 ]
-"76
+"87
 [v slave@ping_buf ping_buf `[32]uc  1 a 32 0 ]
 "59
 [v slave@col col `uc  1 a 1 97 ]
@@ -1024,104 +996,21 @@ FSM_DEBOUNCE 3
 "39
 [v slave@dev dev `S1637  1 a 3 98 ]
 "38
-[v slave@pvParameters pvParameters `*.39v  1 p 2 60 ]
-"74
-[v slave@F18017 F18017 `[32]uc  1 s 32 F18017 ]
-"92
+[v slave@pvParameters pvParameters `*.39v  1 p 2 37 ]
+"85
+[v slave@F18018 F18018 `[32]uc  1 s 32 F18018 ]
+"103
 } 0
-"13 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/nf_snprintf.c
-[v _snprintf snprintf `(i  1 e 2 0 ]
+"3 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/strncpy.c
+[v _strncpy strncpy `(*.39uc  1 e 3 0 ]
 {
-[u S2726 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-"17
-[s S2729 _IO_FILE 11 `S2726 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v snprintf@f f `S2729  1 a 11 6 ]
+"5
+[v strncpy@cp cp `*.39uc  1 a 2 17 ]
+"3
+[v strncpy@d d `*.39uc  1 p 2 11 ]
+[v strncpy@s s `*.32Cuc  1 p 2 13 ]
+[v strncpy@n n `ui  1 p 2 15 ]
 "15
-[v snprintf@cnt cnt `i  1 a 2 4 ]
-"16
-[v snprintf@ap ap `[1]*.39v  1 a 2 2 ]
-"13
-[v snprintf@s s `*.39uc  1 p 2 47 ]
-[v snprintf@n n `ui  1 p 2 49 ]
-[v snprintf@fmt fmt `*.32Cuc  1 p 2 51 ]
-"39
-} 0
-"1817 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-{
-"1820
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 45 ]
-[s S2764 _IO_FILE 0 ]
-"1817
-[v vfprintf@fp fp `*.39S2764  1 p 2 39 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 41 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 43 ]
-"1840
-} 0
-"1177
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-{
-[u S2782 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
-"1188
-[v vfpfcnvrt@convarg convarg `S2782  1 a 4 34 ]
-"1179
-[v vfpfcnvrt@cp cp `*.32uc  1 a 2 32 ]
-"1191
-[v vfpfcnvrt@cnt cnt `i  1 a 2 30 ]
-"1179
-[v vfpfcnvrt@c c `uc  1 a 1 38 ]
-"1180
-[v vfpfcnvrt@done done `a  1 a 1 29 ]
-[s S2764 _IO_FILE 0 ]
-"1177
-[v vfpfcnvrt@fp fp `*.39S2764  1 p 2 21 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 23 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 25 ]
-"1814
-} 0
-"8 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 11 ]
-[u S2726 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S2729 _IO_FILE 11 `S2726 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S2729  1 p 2 13 ]
-"24
-} 0
-"7 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/putch.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-"9
-} 0
-"1 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/abs.c
-[v _abs abs `(i  1 e 2 0 ]
-{
-[v abs@a a `i  1 p 2 17 ]
-"4
-} 0
-"7 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 16 ]
-[v ___awmod@counter counter `uc  1 a 1 15 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 11 ]
-[v ___awmod@divisor divisor `i  1 p 2 13 ]
-"34
-} 0
-"7 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 17 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 16 ]
-[v ___awdiv@counter counter `uc  1 a 1 15 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 11 ]
-[v ___awdiv@divisor divisor `i  1 p 2 13 ]
-"41
 } 0
 "115 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/button_check.c
 [v _getRow getRow `(uc  1 e 1 0 ]
@@ -1383,10 +1272,10 @@ FSM_DEBOUNCE 3
 {
 "102
 } 0
-"79 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/mcc_generated_files/timer/src/tmr0.c
-[v _TMR0_Start TMR0_Start `(v  1 e 1 0 ]
+"84 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
 {
-"82
+"87
 } 0
 "151
 [v _TMR0_OverflowCallbackRegister TMR0_OverflowCallbackRegister `(v  1 e 1 0 ]
@@ -1515,14 +1404,14 @@ FSM_DEBOUNCE 3
 "138
 } 0
 "7 /Applications/microchip/xc8/v2.50/pic/sources/c99/common/awmod.c
-[v i2___awmod __awmod `(i  1 e 2 0 ]
+[v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v i2___awmod@sign sign `uc  1 a 1 5 ]
-[v i2___awmod@counter counter `uc  1 a 1 4 ]
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
 "7
-[v i2___awmod@dividend dividend `i  1 p 2 0 ]
-[v i2___awmod@divisor divisor `i  1 p 2 2 ]
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
 "34
 } 0
 "100 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/mcc_generated_files/timer/src/tmr2.c
@@ -1556,10 +1445,10 @@ FSM_DEBOUNCE 3
 {
 "159
 } 0
-"101 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/main.c
+"112 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/main.c
 [v _tmr0_irq tmr0_irq `(v  1 e 1 0 ]
 {
-"103
+"114
 } 0
 "148 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -1576,8 +1465,8 @@ FSM_DEBOUNCE 3
 {
 "185
 } 0
-"97 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/main.c
+"108 /Users/tolgakuntman/MPLABXProjects/button_five_by_five.X/main.c
 [v _nrf_irq nrf_irq `(v  1 e 1 0 ]
 {
-"99
+"110
 } 0

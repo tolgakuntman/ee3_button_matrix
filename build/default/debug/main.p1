@@ -33,9 +33,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;./button_check.h: 38: uint8_t getCol();
 [v _getCol `(uc ~T0 @X0 0 e? ]
-"123 /Applications/microchip/xc8/v2.50/pic/include/c99/stdio.h
-[; ;/Applications/microchip/xc8/v2.50/pic/include/c99/stdio.h: 123: int snprintf(char *restrict, size_t, const char *restrict, ...);
-[v _snprintf `(i ~T0 @X0 0 e2v`*uc`ui`*Cuc ]
+"34 /Applications/microchip/xc8/v2.50/pic/include/c99/string.h
+[; ;/Applications/microchip/xc8/v2.50/pic/include/c99/string.h: 34: char *strncpy (char *restrict, const char *restrict, size_t);
+[v _strncpy `(*uc ~T0 @X0 0 ef3`*uc`*Cuc`ui ]
 "175 ./mirf.h
 [; ;./mirf.h: 175: void Nrf24_send(NRF24_t * dev, uint8_t *value);
 [v _Nrf24_send `(v ~T0 @X0 0 ef2`*S2419`*uc ]
@@ -94,9 +94,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "158 ./mcc_generated_files/system/../timer/tmr1.h
 [; ;./mcc_generated_files/system/../timer/tmr1.h: 158: void TMR1_Stop(void);
 [v _TMR1_Stop `(v ~T0 @X0 0 ef ]
-"186 ./mcc_generated_files/system/../timer/tmr0.h
-[; ;./mcc_generated_files/system/../timer/tmr0.h: 186: void TMR0_Start(void);
-[v _TMR0_Start `(v ~T0 @X0 0 ef ]
+"195 ./mcc_generated_files/system/../timer/tmr0.h
+[; ;./mcc_generated_files/system/../timer/tmr0.h: 195: void TMR0_Stop(void);
+[v _TMR0_Stop `(v ~T0 @X0 0 ef ]
 "328 /Users/tolgakuntman/.mchp_packs/Microchip/PIC18F-Q_DFP/1.25.433/xc8/pic/include/proc/pic18f57q43.h
 [; ;/Users/tolgakuntman/.mchp_packs/Microchip/PIC18F-Q_DFP/1.25.433/xc8/pic/include/proc/pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2757,61 +2757,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 59:             uint8_t col = getCol();
 [v _col `uc ~T0 @X0 1 a ]
 [e = _col ( _getCol ..  ]
-"60
-[; ;main.c: 60:             if (row != 255 && col != 255) {
+"61
+[; ;main.c: 61:             if (row != 255 && col != 255) {
 [e $ ! && != -> _row `i -> 255 `i != -> _col `i -> 255 `i 2432  ]
 {
-"61
-[; ;main.c: 61:                 uint8_t sending_buf[32];
-[v _sending_buf `uc ~T0 @X0 -> 32 `i a ]
+[v F18016 `uc ~T0 @X0 -> 32 `i s ]
+[i F18016
+:U ..
 "62
-[; ;main.c: 62:                 snprintf((char *)sending_buf, 32, "ROW:%d COL:%d", row, col);
-[e ( _snprintf (2 , , (. , , -> &U _sending_buf `*uc -> -> 32 `i `ui :s 3C -> _row `i -> _col `i ]
-"63
-[; ;main.c: 63:                 Nrf24_send(&dev, sending_buf);
+[; ;main.c: 62:                 uint8_t sending_buf[32] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _sending_buf `uc ~T0 @X0 -> 32 `i a ]
+[e = _sending_buf F18016 ]
+"65
+[; ;main.c: 65:                 strncpy((char *)sending_buf, "BUTTON", 8);
+[e ( _strncpy (3 , , -> &U _sending_buf `*uc :s 3C -> -> 8 `i `ui ]
+"68
+[; ;main.c: 68:                 sending_buf[8] = row;
+[e = *U + &U _sending_buf * -> -> -> 8 `i `ui `ux -> -> # *U &U _sending_buf `ui `ux _row ]
+"69
+[; ;main.c: 69:                 sending_buf[9] = col;
+[e = *U + &U _sending_buf * -> -> -> 9 `i `ui `ux -> -> # *U &U _sending_buf `ui `ux _col ]
+"71
+[; ;main.c: 71:                 Nrf24_send(&dev, sending_buf);
 [e ( _Nrf24_send (2 , &U _dev &U _sending_buf ]
-"64
-[; ;main.c: 64:                 while (Nrf24_isSending(&dev)) {
+"73
+[; ;main.c: 73:                 while (Nrf24_isSending(&dev)) {
 [e $U 2433  ]
 [e :U 2434 ]
 {
-"65
-[; ;main.c: 65:                     DELAY_milliseconds(1);
+"74
+[; ;main.c: 74:                     DELAY_milliseconds(1);
 [e ( _DELAY_milliseconds (1 -> -> 1 `i `us ]
-"66
-[; ;main.c: 66:                 }
+"75
+[; ;main.c: 75:                 }
 }
 [e :U 2433 ]
-"64
-[; ;main.c: 64:                 while (Nrf24_isSending(&dev)) {
+"73
+[; ;main.c: 73:                 while (Nrf24_isSending(&dev)) {
 [e $ != -> ( _Nrf24_isSending (1 &U _dev `i -> 0 `i 2434  ]
 [e :U 2435 ]
-"67
-[; ;main.c: 67:             }
+"76
+[; ;main.c: 76:             }
 }
 [e :U 2432 ]
-"68
-[; ;main.c: 68:             ClearButtonPress();
+"78
+[; ;main.c: 78:             ClearButtonPress();
 [e ( _ClearButtonPress ..  ]
-"69
-[; ;main.c: 69:             TMR2_Start();
+"79
+[; ;main.c: 79:             TMR2_Start();
 [e ( _TMR2_Start ..  ]
-"70
-[; ;main.c: 70:         }
+"80
+[; ;main.c: 80:         }
 }
 [e :U 2431 ]
-"73
-[; ;main.c: 73:         if (send_ping_flag) {
+"84
+[; ;main.c: 84:         if (send_ping_flag) {
 [e $ ! != -> _send_ping_flag `i -> 0 `i 2436  ]
 {
-"74
-[; ;main.c: 74:             send_ping_flag = 0;
+"85
+[; ;main.c: 85:             send_ping_flag = 0;
 [e = _send_ping_flag -> -> 0 `i `a ]
-[v F18017 `uc ~T0 @X0 -> 32 `i s ]
-[i F18017
+[v F18018 `uc ~T0 @X0 -> 32 `i s ]
+[i F18018
 :U ..
-"76
-[; ;main.c: 76:             uint8_t ping_buf[32] = "PING";
+"87
+[; ;main.c: 87:             uint8_t ping_buf[32] = "PING";
 -> 80 `c
 -> 73 `c
 -> 78 `c
@@ -2820,137 +2833,136 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _ping_buf `uc ~T0 @X0 -> 32 `i a ]
-[e = _ping_buf F18017 ]
-"77
-[; ;main.c: 77:             Nrf24_send(&dev, ping_buf);
+[e = _ping_buf F18018 ]
+"88
+[; ;main.c: 88:             Nrf24_send(&dev, ping_buf);
 [e ( _Nrf24_send (2 , &U _dev &U _ping_buf ]
-"78
-[; ;main.c: 78:             while (Nrf24_isSending(&dev)) {
+"89
+[; ;main.c: 89:             while (Nrf24_isSending(&dev)) {
 [e $U 2437  ]
 [e :U 2438 ]
 {
-"79
-[; ;main.c: 79:                     DELAY_milliseconds(1);
+"90
+[; ;main.c: 90:                     DELAY_milliseconds(1);
 [e ( _DELAY_milliseconds (1 -> -> 1 `i `us ]
-"80
-[; ;main.c: 80:                 }
+"91
+[; ;main.c: 91:                 }
 }
 [e :U 2437 ]
-"78
-[; ;main.c: 78:             while (Nrf24_isSending(&dev)) {
+"89
+[; ;main.c: 89:             while (Nrf24_isSending(&dev)) {
 [e $ != -> ( _Nrf24_isSending (1 &U _dev `i -> 0 `i 2438  ]
 [e :U 2439 ]
-"81
-[; ;main.c: 81:         }
+"92
+[; ;main.c: 92:         }
 }
 [e :U 2436 ]
-"82
-[; ;main.c: 82:         if(nrf_flag){
+"93
+[; ;main.c: 93:         if(nrf_flag){
 [e $ ! != -> _nrf_flag `i -> 0 `i 2440  ]
 {
-"83
-[; ;main.c: 83:             if (Nrf24_dataReady(&dev)) {
+"94
+[; ;main.c: 94:             if (Nrf24_dataReady(&dev)) {
 [e $ ! != -> ( _Nrf24_dataReady (1 &U _dev `i -> 0 `i 2441  ]
 {
-[v F18019 `uc ~T0 @X0 -> 32 `i s ]
-[i F18019
+[v F18020 `uc ~T0 @X0 -> 32 `i s ]
+[i F18020
 :U ..
-"84
-[; ;main.c: 84:                 uint8_t buf[32]={0};
+"95
+[; ;main.c: 95:                 uint8_t buf[32]={0};
 -> -> 0 `i `uc
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 32 `i a ]
-[e = _buf F18019 ]
-"85
-[; ;main.c: 85:                 Nrf24_getData(&dev, buf);
+[e = _buf F18020 ]
+"96
+[; ;main.c: 96:                 Nrf24_getData(&dev, buf);
 [e ( _Nrf24_getData (2 , &U _dev &U _buf ]
-"87
-[; ;main.c: 87:             }
+"98
+[; ;main.c: 98:             }
 }
 [e :U 2441 ]
-"88
-[; ;main.c: 88:         }
+"99
+[; ;main.c: 99:         }
 }
 [e :U 2440 ]
-"90
-[; ;main.c: 90:         DELAY_milliseconds(1);
+"101
+[; ;main.c: 101:         DELAY_milliseconds(1);
 [e ( _DELAY_milliseconds (1 -> -> 1 `i `us ]
-"91
-[; ;main.c: 91:     }
+"102
+[; ;main.c: 102:     }
 }
 [e :U 2428 ]
 [e $U 2429  ]
 [e :U 2430 ]
-"92
-[; ;main.c: 92: }
+"103
+[; ;main.c: 103: }
 [e :UE 2421 ]
 }
-"97
-[; ;main.c: 97: void nrf_irq(void) {
+"108
+[; ;main.c: 108: void nrf_irq(void) {
 [v _nrf_irq `(v ~T0 @X0 1 ef ]
 {
 [e :U _nrf_irq ]
 [f ]
-"98
-[; ;main.c: 98:     nrf_flag = 1;
+"109
+[; ;main.c: 109:     nrf_flag = 1;
 [e = _nrf_flag -> -> 1 `i `a ]
-"99
-[; ;main.c: 99: }
+"110
+[; ;main.c: 110: }
 [e :UE 2442 ]
 }
-"101
-[; ;main.c: 101: void tmr0_irq(void) {
+"112
+[; ;main.c: 112: void tmr0_irq(void) {
 [v _tmr0_irq `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr0_irq ]
 [f ]
-"102
-[; ;main.c: 102:     send_ping_flag = 1;
+"113
+[; ;main.c: 113:     send_ping_flag = 1;
 [e = _send_ping_flag -> -> 1 `i `a ]
-"103
-[; ;main.c: 103: }
+"114
+[; ;main.c: 114: }
 [e :UE 2443 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"106
-[; ;main.c: 106: void main(void) {
+"117
+[; ;main.c: 117: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"107
-[; ;main.c: 107:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"108
-[; ;main.c: 108:     (INTCON0bits.GIE = 1);
-[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"111
-[; ;main.c: 111:     TMR0_OverflowCallbackRegister(tmr0_irq);
-[e ( _TMR0_OverflowCallbackRegister (1 &U _tmr0_irq ]
-"112
-[; ;main.c: 112:     TMR2_OverflowCallbackRegister(Buttoncheck);
-[e ( _TMR2_OverflowCallbackRegister (1 &U _Buttoncheck ]
-"113
-[; ;main.c: 113:     nRF24_IRQ_SetInterruptHandler(nrf_irq);
-[e ( _nRF24_IRQ_SetInterruptHandler (1 &U _nrf_irq ]
-"116
-[; ;main.c: 116:     TMR1_Stop();
-[e ( _TMR1_Stop ..  ]
-"117
-[; ;main.c: 117:     TMR2_Start();
-[e ( _TMR2_Start ..  ]
 "118
-[; ;main.c: 118:     TMR0_Start();
-[e ( _TMR0_Start ..  ]
-"121
-[; ;main.c: 121:     slave(((void*)0));
+[; ;main.c: 118:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"119
+[; ;main.c: 119:     (INTCON0bits.GIE = 1);
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"122
+[; ;main.c: 122:     TMR0_OverflowCallbackRegister(tmr0_irq);
+[e ( _TMR0_OverflowCallbackRegister (1 &U _tmr0_irq ]
+"123
+[; ;main.c: 123:     TMR2_OverflowCallbackRegister(Buttoncheck);
+[e ( _TMR2_OverflowCallbackRegister (1 &U _Buttoncheck ]
+"124
+[; ;main.c: 124:     nRF24_IRQ_SetInterruptHandler(nrf_irq);
+[e ( _nRF24_IRQ_SetInterruptHandler (1 &U _nrf_irq ]
+"127
+[; ;main.c: 127:     TMR1_Stop();
+[e ( _TMR1_Stop ..  ]
+"128
+[; ;main.c: 128:     TMR2_Start();
+[e ( _TMR2_Start ..  ]
+"129
+[; ;main.c: 129:     TMR0_Stop();
+[e ( _TMR0_Stop ..  ]
+"132
+[; ;main.c: 132:     slave(((void*)0));
 [e ( _slave (1 -> -> 0 `i `*v ]
-"131
-[; ;main.c: 131: }
+"142
+[; ;main.c: 142: }
 [e :UE 2444 ]
 }
-[p f _snprintf 8388736 ]
-[a 3C 82 79 87 58 37 100 32 67 79 76 58 37 100 0 ]
 [a 1C 50 82 69 67 86 0 ]
 [a 2C 50 82 69 67 86 0 ]
+[a 3C 66 85 84 84 79 78 0 ]

@@ -16,7 +16,7 @@
 #define CONFIG_RETRANSMIT_DELAY 100
 #define CONFIG_SLAVE 1
 
-static bool send_ping_flag = false;
+static bool data_send_lock = false;
 static bool nrf_flag = false;
 
 #if CONFIG_ADVANCED
@@ -51,10 +51,16 @@ void slave(void *pvParameters) {
 #endif
 
     Nrf24_configRegister(NRF_STATUS, (1 << RX_DR) | (1 << TX_DS) | (1 << MAX_RT));
-
+    data_send_lock = true;
     while (1) {
         // Button check logic
         if (IsButonChecked()) {
+            if(!data_send_lock){
+                Nrf24_configRegister(NRF_STATUS, (1 << TX_DS) | (1 << MAX_RT));
+                ClearButtonPress();
+                TMR2_Start();
+                continue;
+            }
             uint8_t row = getRow();
             uint8_t col = getCol();
 
@@ -74,22 +80,14 @@ void slave(void *pvParameters) {
                     DELAY_milliseconds(1);
                 }
             }
-
+            data_send_lock=false;
+            TMR0_Start();
             ClearButtonPress();
             TMR2_Start();
         }
 
 
-        // Ping logic
-        if (send_ping_flag) {
-            send_ping_flag = false;
 
-            uint8_t ping_buf[32] = "PING";
-            Nrf24_send(&dev, ping_buf);
-            while (Nrf24_isSending(&dev)) {
-                    DELAY_milliseconds(1);
-                }
-        }
         if(nrf_flag){
             if (Nrf24_dataReady(&dev)) {
                 uint8_t buf[32]={0};
@@ -110,7 +108,8 @@ void nrf_irq(void) {
 }
 
 void tmr0_irq(void) {
-    send_ping_flag = true;
+    data_send_lock = true;
+    TMR0_Stop();
 }
 
 // Entry point

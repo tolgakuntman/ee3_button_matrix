@@ -1,6 +1,6 @@
-// Port of the MIRF Library for PIC18f57Q43
-// Yusuf Hussein (yusufyy2004@hotmail.com)
-// can work for other PIC microcontrollers
+/*	adapted from https://github.com/nopnop2002/esp-idf-mirf/tree/master
+ * and changed by the help of Yusuf Hosny and Tolga Kuntman
+*/
 
 #include <string.h>
 

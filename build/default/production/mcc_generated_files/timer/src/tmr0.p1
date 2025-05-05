@@ -2656,7 +2656,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _TMR0L -> -> 220 `i `uc ]
 "51
 [; ;mcc_generated_files/timer/src/tmr0.c: 51:     T0CON1 = (3 << 0x5)
-[e = _T0CON1 -> | | << -> 3 `i -> 5 `i << -> 9 `i -> 0 `i << -> 1 `i -> 4 `i `uc ]
+[e = _T0CON1 -> | | << -> 3 `i -> 5 `i << -> 10 `i -> 0 `i << -> 1 `i -> 4 `i `uc ]
 "55
 [; ;mcc_generated_files/timer/src/tmr0.c: 55:     tmr0PeriodCount = ((uint16_t)TMR0H << 8) | TMR0L;
 [e = _tmr0PeriodCount -> | << -> -> _TMR0H `us `ui -> 8 `i -> _TMR0L `ui `us ]

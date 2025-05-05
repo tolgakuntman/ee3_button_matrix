@@ -29353,7 +29353,7 @@ void TMR0_Initialize(void)
     TMR0L = 0xDC;
 
     T0CON1 = (3 << 0x5)
-        | (9 << 0x0)
+        | (10 << 0x0)
         | (1 << 0x4);
 
     tmr0PeriodCount = ((uint16_t)TMR0H << 8) | TMR0L;

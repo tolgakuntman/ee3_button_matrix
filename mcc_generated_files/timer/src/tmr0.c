@@ -45,11 +45,11 @@ static void TMR0_DefaultCallback(void);
 
 void TMR0_Initialize(void)
 {
-    TMR0H = 0xB;                    // Period 500ms; Frequency 125000 Hz; Count 3036
+    TMR0H = 0xB;                    // Period 1s; Frequency 62500 Hz; Count 3036
     TMR0L = 0xDC;
     
     T0CON1 = (3 << _T0CON1_T0CS_POSN)   // T0CS HFINTOSC
-        | (9 << _T0CON1_T0CKPS_POSN)   // T0CKPS 1:512
+        | (10 << _T0CON1_T0CKPS_POSN)   // T0CKPS 1:1024
         | (1 << _T0CON1_T0ASYNC_POSN);  // T0ASYNC not_synchronised
     
     tmr0PeriodCount = ((uint16_t)TMR0H << 8) | TMR0L;

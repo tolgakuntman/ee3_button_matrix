@@ -30215,7 +30215,7 @@ uint8_t getRow();
 uint8_t getCol();
 # 8 "main.c" 2
 # 19 "main.c"
-static _Bool send_ping_flag = 0;
+static _Bool data_send_lock = 0;
 static _Bool nrf_flag = 0;
 
 
@@ -30250,10 +30250,16 @@ void slave(void *pvParameters) {
 
 
     Nrf24_configRegister(0x07, (1 << 6) | (1 << 5) | (1 << 4));
-
+    data_send_lock = 1;
     while (1) {
 
         if (IsButonChecked()) {
+            if(!data_send_lock){
+                Nrf24_configRegister(0x07, (1 << 5) | (1 << 4));
+                ClearButtonPress();
+                TMR2_Start();
+                continue;
+            }
             uint8_t row = getRow();
             uint8_t col = getCol();
 
@@ -30273,22 +30279,14 @@ void slave(void *pvParameters) {
                     DELAY_milliseconds(1);
                 }
             }
-
+            data_send_lock=0;
+            TMR0_Start();
             ClearButtonPress();
             TMR2_Start();
         }
 
 
 
-        if (send_ping_flag) {
-            send_ping_flag = 0;
-
-            uint8_t ping_buf[32] = "PING";
-            Nrf24_send(&dev, ping_buf);
-            while (Nrf24_isSending(&dev)) {
-                    DELAY_milliseconds(1);
-                }
-        }
         if(nrf_flag){
             if (Nrf24_dataReady(&dev)) {
                 uint8_t buf[32]={0};
@@ -30309,7 +30307,8 @@ void nrf_irq(void) {
 }
 
 void tmr0_irq(void) {
-    send_ping_flag = 1;
+    data_send_lock = 1;
+    TMR0_Stop();
 }
 
 
@@ -30329,5 +30328,5 @@ void main(void) {
 
 
     slave(((void*)0));
-# 142 "main.c"
+# 141 "main.c"
 }

@@ -30256,17 +30256,28 @@ void slave(void *pvParameters) {
         if (IsButonChecked()) {
             uint8_t row = getRow();
             uint8_t col = getCol();
+
             if (row != 255 && col != 255) {
-                uint8_t sending_buf[32];
-                snprintf((char *)sending_buf, 32, "ROW:%d COL:%d", row, col);
+                uint8_t sending_buf[32] = {0};
+
+
+                strncpy((char *)sending_buf, "BUTTON", 8);
+
+
+                sending_buf[8] = row;
+                sending_buf[9] = col;
+
                 Nrf24_send(&dev, sending_buf);
+
                 while (Nrf24_isSending(&dev)) {
                     DELAY_milliseconds(1);
                 }
             }
+
             ClearButtonPress();
             TMR2_Start();
         }
+
 
 
         if (send_ping_flag) {
@@ -30314,9 +30325,9 @@ void main(void) {
 
     TMR1_Stop();
     TMR2_Start();
-    TMR0_Start();
+    TMR0_Stop();
 
 
     slave(((void*)0));
-# 131 "main.c"
+# 142 "main.c"
 }
